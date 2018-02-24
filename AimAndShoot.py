@@ -20,12 +20,13 @@ class Target (pygame.sprite.Sprite):
 class Player (pygame.sprite.Sprite):
     def __init__ (self, x, y):
         super().__init__()
-        self.image = pygame.Surface ((30,20))
-        self.rect = self.image.get_rect()
-        self.image.fill(blue)
+        self.image = pygame.Surface ((30,30))
+        self.rect = pygame.draw.circle(self.image, blue, (15,15), 14)
         self.rect.x = x
         self.rect.y = y
 
+#class Cannon (pygame.sprite.Sprite):
+    
 pygame.init()
 size = (500,500)
 screen = pygame.display.set_mode(size)
@@ -39,7 +40,7 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
     screen.blit(tester.image, (250,250))
-    screen.blit(shooter.image, (235, 475))
+    screen.blit(shooter.image, (235, 465))
 
 
 
